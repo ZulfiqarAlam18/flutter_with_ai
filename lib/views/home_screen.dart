@@ -79,11 +79,31 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 20),
             Expanded(
               child: SingleChildScrollView(
-                child: Text(
-                  controller.storyResult.isEmpty
-                      ? "Your story will appear here..."
-                      : controller.storyResult,
-                  style: const TextStyle(fontSize: 16),
+                child: Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  color: Colors.grey[50],
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 2,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: SelectableText(
+                      controller.storyResult.isEmpty
+                          ? "Your story will appear here..."
+                          : controller.storyResult,
+                      style: const TextStyle(
+                        fontSize: 17,
+                        height: 1.5,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black87,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
                 ),
               ),
             ),
